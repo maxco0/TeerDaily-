@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teer Daily - Accurate Khanapara, Shillong & Juwai Teer Results</title>
+    <meta name="description" content="Get the fastest and most accurate Teer results for Khanapara, Shillong, and Juwai. Daily updates, historical charts, and expert analysis on the Meghalaya archery outcome system.">
+    <meta name="keywords" content="Teer Result, Khanapara Teer, Shillong Teer, Juwai Teer, Teer Counter, Teer Target, Meghalaya Archery, Morning Teer">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.teerdaily.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.teerdaily.com/">
+    <meta property="og:title" content="Teer Daily - Official Result Portal">
+    <meta property="og:description" content="Live updates for Shillong, Khanapara and Juwai Teer. Historical data and common number analysis.">
+    <meta property="og:image" content="https://www.teerdaily.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.teerdaily.com/">
+    <meta property="twitter:title" content="Teer Daily - Official Result Portal">
+    <meta property="twitter:description" content="Fastest Teer Results in Meghalaya. Check FR and SR updates now.">
+    <meta property="twitter:image" content="https://www.teerdaily.com/assets/twitter-image.jpg">
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "Teer Daily",
+      "url": "https://www.teerdaily.com",
+      "logo": "https://www.teerdaily.com/assets/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/teerdaily",
+        "https://twitter.com/teerdaily"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What time is the Khanapara Teer Result declared?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khanapara Teer results are typically declared at 4:00 PM for the First Round and 4:45 PM for the Second Round."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is Teer legal in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Teer is legal specifically within the state of Meghalaya, regulated under the Meghalaya Amusements and Betting Tax Act."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        /* -----------------------------------------------------------
+           ROOT VARIABLES & RESET
+           ----------------------------------------------------------- */
+        :root {
+            --primary-yellow: #FFD700;
+            --primary-hover: #e6c200;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.05);
+            --shadow-hover: 0 10px 25px rgba(0,0,0,0.1);
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --status-pending: #ff9800;
+            --status-success: #28a745;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        ul { list-style: none; }
+
+        /* -----------------------------------------------------------
+           HEADER
+           ----------------------------------------------------------- */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #000;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span { color: #f5b000; margin-left: 2px; }
+
+        .nav-menu { display: flex; gap: 25px; }
+        .nav-menu a {
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+        .nav-menu a:hover { color: #f5b000; }
+
+        /* Mobile Menu Toggle */
+        .hamburger { display: none; cursor: pointer; font-size: 24px; }
+
+        /* -----------------------------------------------------------
+           HERO SECTION
+           ----------------------------------------------------------- */
+        .hero {
+            background: linear-gradient(135deg, #1e1e1e 0%, #333333 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p { color: #ccc; margin-bottom: 20px; font-size: 1.1rem; }
+
+        .date-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .status-dot {
+            height: 10px;
+            width: 10px;
+            background-color: var(--status-pending);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px var(--status-pending);
+        }
+
+        /* -----------------------------------------------------------
+           LAYOUT & GRID
+           ----------------------------------------------------------- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .ad-slot {
+            width: 100%;
+            height: 100px;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #adb5bd;
+            font-size: 14px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 1px dashed #ced4da;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-yellow);
+            padding-left: 15px;
+            font-weight: 700;
+        }
+
+        /* GRID SYSTEM */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        /* -----------------------------------------------------------
+           CARDS DESIGN
+           ----------------------------------------------------------- */
+        .teer-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-yellow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .teer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title { font-size: 1.25rem; font-weight: 700; }
+        .location-icon { color: var(--text-muted); font-size: 14px; }
+
+        .result-box {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .result-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+        .result-value { font-size: 24px; font-weight: 800; color: #222; }
+        
+        .waiting { color: #aaa; font-size: 18px; font-style: italic; }
+
+        .card-btn {
+            margin-top: auto;
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #222;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .card-btn:hover { background: #444; }
+
+        /* HIT NUMBER CARD */
+        .hit-card .inputs-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .hit-card input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .admin-note { font-size: 12px; color: #999; margin-bottom: 10px; }
+
+        /* PREVIOUS RESULTS TABLE */
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--shadow-soft);
+            overflow-x: auto;
+        }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background-color: #f8f9fa; font-weight: 600; font-size: 14px; color: #555; }
+        tr:hover { background-color: #f9f9f9; }
+
+        /* -----------------------------------------------------------
+           ARTICLE SECTION
+           ----------------------------------------------------------- */
+        .content-body {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            margin-top: 40px;
+        }
+
+        .article-content h2 { font-size: 1.8rem; margin: 30px 0 15px 0; color: #222; }
+        .article-content h3 { font-size: 1.4rem; margin: 25px 0 10px 0; color: #444; }
+        .article-content p { margin-bottom: 18px; font-size: 1.05rem; color: #444; }
+        .article-content ul { margin-left: 20px; margin-bottom: 20px; list-style-type: disc; }
+        .article-content li { margin-bottom: 10px; }
+        
+        .faq-block {
+            background: #f9f9f9;
+            border-left: 4px solid var(--primary-yellow);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .faq-q { font-weight: 700; margin-bottom: 10px; display: block; }
+
+        /* -----------------------------------------------------------
+           FOOTER
+           ----------------------------------------------------------- */
+        footer {
+            background: #111;
+            color: #eee;
+            padding: 60px 0 20px 0;
+            margin-top: 60px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 { color: #fff; margin-bottom: 20px; font-size: 18px; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col a { color: #aaa; font-size: 14px; }
+        .footer-col a:hover { color: var(--primary-yellow); }
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* -----------------------------------------------------------
+           RESPONSIVE
+           ----------------------------------------------------------- */
+        @media (max-width: 992px) {
+            .card-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .card-grid { grid-template-columns: 1fr 1fr; gap: 15px; } /* 2 Column Mobile */
+            .teer-card { padding: 15px; }
+            .card-title { font-size: 1rem; }
+            .result-value { font-size: 18px; }
+            .nav-menu { display: none; } /* Simplified for this demo */
+            .hamburger { display: block; }
+            .hero h1 { font-size: 1.8rem; }
+            .content-body { padding: 20px; }
+        }
+        
+        @media (max-width: 480px) {
+            .card-grid { grid-template-columns: 1fr 1fr; } /* Strictly 2 columns */
+            .inputs-row { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Teer <span>Daily</span></a>
+            <nav class="nav-menu">
+                <a href="#">Home</a>
+                <a href="#">Khanapara</a>
+                <a href="#">Shillong</a>
+                <a href="#">Juwai</a>
+                <a href="#">Common Numbers</a>
+            </nav>
+            <div class="hamburger">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Accurate Daily Teer Results</h1>
+        <p>Official Updates for Khanapara, Shillong, and Juwai</p>
+        <div class="date-badge">
+            <span class="status-dot"></span>
+            <span id="currentDate">Loading Date...</span>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Ad Placeholder -->
+        <div class="ad-slot">Advertisment Space (Safe AdSense Placement)</div>
+
+        <h2 class="section-title">Today's Live Results</h2>
+
+        <!-- Card Grid -->
+        <div class="card-grid">
+            
+            <!-- Khanapara Card -->
+            <div class="teer-card">
+                <div class="card-header">
+                    <span class="card-title">Khanapara Teer</span>
+                    <span class="location-icon">Guwahati</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-label">First Round (4:00 PM)</span>
+                    <span class="result-value">82</span> <!-- Example Data -->
+                </div>
+                <div class="result-box">
+                    <span class="result-label">Second Round (4:45 PM)</span>
+                    <span class="result-value waiting">Wait...</span>
+                </div>
+                <a href="#" class="card-btn">View Details</a>
+            </div>
+
+            <!-- Shillong Card -->
+            <div class="teer-card">
+                <div class="card-header">
+                    <span class="card-title">Shillong Teer</span>
+                    <span class="location-icon">Meghalaya</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-label">First Round (3:45 PM)</span>
+                    <span class="result-value">45</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-label">Second Round (4:30 PM)</span>
+                    <span class="result-value">12</span>
+                </div>
+                <a href="#" class="card-btn">View Details</a>
+            </div>
+
+            <!-- Juwai Card -->
+            <div class="teer-card">
+                <div class="card-header">
+                    <span class="card-title">Juwai Teer</span>
+                    <span class="location-icon">Juwai</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-label">First Round (1:30 PM)</span>
+                    <span class="result-value">99</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-label">Second Round (2:15 PM)</span>
+                    <span class="result-value">03</span>
+                </div>
+                <a href="#" class="card-btn">View Details</a>
+            </div>
+
+            <!-- Hit Number Card (Admin/Prediction Style) -->
+            <div class="teer-card hit-card">
+                <div class="card-header">
+                    <span class="card-title">Target Numbers</span>
+                    <span class="location-icon">Prediction</span>
+                </div>
+                <p class="admin-note">Expert Common Numbers for Today</p>
+                <div class="inputs-row">
+                    <input type="text" value="45" readonly>
+                    <input type="text" value="89" readonly>
+                    <input type="text" value="12" readonly>
+                    <input type="text" value="67" readonly>
+                </div>
+                <div class="result-box" style="background: #fff3cd; border-color: #ffeeba;">
+                    <span class="result-label" style="color:#856404">House / Ending</span>
+                    <span class="result-value" style="font-size: 18px;">House: 4 - End: 9</span>
+                </div>
+                <a href="#" class="card-btn">All Common Numbers</a>
+            </div>
+
+            <!-- Previous Result Card -->
+            <div class="teer-card">
+                <div class="card-header">
+                    <span class="card-title">History</span>
+                    <span class="location-icon">Archive</span>
+                </div>
+                <div style="flex-grow:1; display:flex; align-items:center; justify-content:center; color:#666; font-size:14px; text-align:center;">
+                    Check results from the last 30 days, 1 year, and vintage charts.
+                </div>
+                <a href="#" class="card-btn">Browse Archive</a>
+            </div>
+
+            <!-- Club Chart Card -->
+            <div class="teer-card">
+                <div class="card-header">
+                    <span class="card-title">Club Chart</span>
+                    <span class="location-icon">Weekly</span>
+                </div>
+                <div style="flex-grow:1; display:flex; align-items:center; justify-content:center; color:#666; font-size:14px; text-align:center;">
+                   Analysis based on weekdays and club grouping logic.
+                </div>
+                <a href="#" class="card-btn">View Chart</a>
+            </div>
+        </div>
+
+        <!-- Ad Placeholder -->
+        <div class="ad-slot">Advertisment Space</div>
+
+        <!-- Previous Results Table Section -->
+        <h2 class="section-title">Last 7 Days Results</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Khanapara (FR/SR)</th>
+                        <th>Shillong (FR/SR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12 Feb 2026</td>
+                        <td>82 / 11</td>
+                        <td>45 / 90</td>
+                    </tr>
+                    <tr>
+                        <td>11 Feb 2026</td>
+                        <td>33 / 56</td>
+                        <td>12 / 88</td>
+                    </tr>
+                    <tr>
+                        <td>10 Feb 2026</td>
+                        <td>90 / 21</td>
+                        <td>67 / 34</td>
+                    </tr>
+                    <tr>
+                        <td>09 Feb 2026</td>
+                        <td>14 / 78</td>
+                        <td>55 / 01</td>
+                    </tr>
+                    <tr>
+                        <td>08 Feb 2026</td>
+                        <td>Sunday</td>
+                        <td>Sunday</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- LONG FORM ARTICLE START -->
+        <article class="content-body" itemscope itemtype="https://schema.org/Article">
+            <h1 itemprop="headline">Understanding Teer: The Intersection of Culture, Archery, and Mathematics in Meghalaya</h1>
+            <meta itemprop="author" content="Teer Daily Editorial Team">
+            <meta itemprop="datePublished" content="2026-01-15">
+            
+            <div class="article-content">
+                <p><strong>Introduction to the Phenomenon</strong><br>
+                In the verdant hills of Meghalaya, a unique daily ritual unfolds that captures the imagination of the entire Northeast region of India. It is not merely a game of chance, but a cultural institution rooted in centuries of tradition. This is "Teer"—a system of archery-based outcome prediction that supports thousands of families, funds local archery clubs, and serves as a fascinating case study of how traditional sports can evolve into a regulated economic ecosystem. Unlike standard lotteries that rely on random number generators or spinning wheels, Teer relies on the physical skill of archers, making it a "game of skill" in the eyes of many enthusiasts.</p>
+
+                <h2>What is Teer? A Detailed Explanation</h2>
+                <p>Teer (which literally translates to "Arrow") is an archery-based game conducted by the Khasi Hills Archery Sports Institute. Every day (except Sundays and holidays), archers from various local clubs gather at the polo grounds in Shillong, as well as designated areas in Khanapara and Juwai. The process is deceptively simple yet steeped in ritual.</p>
+                <p>Two rounds are played daily. In each round, 50 archers shoot 30 arrows each at a cylindrical target made of cane. Once the shooting stops, the officials count the total number of arrows that hit the target. The result for the day is determined by the last two digits of the total number of arrows that successfully hit the target.</p>
+                <p><em>Example Calculation:</em> If 1,245 arrows hit the target, the result for that round is <strong>45</strong>. If 789 arrows hit, the result is <strong>89</strong>. This transparency allows spectators to witness the outcome physically, distinguishing it from opaque digital gambling systems.</p>
+
+                <h2>Cultural Roots and The Archers of Meghalaya</h2>
+                <p>To understand Teer, one must understand the Khasi people's relationship with archery. Archery is not just a sport here; it is an ancestral defense mechanism and a hunting tool that has been preserved through sport. The archers who participate in the daily Teer events are often members of local clubs. The revenue generated from the betting tax and the ticket sales goes largely toward sustaining these archery clubs, allowing them to train youth and maintain the sport's heritage.</p>
+                
+                <h3>How First Round (FR) and Second Round (SR) Work</h3>
+                <p>The game is strictly divided into two sessions to manage the flow of participation:</p>
+                <ul>
+                    <li><strong>First Round (FR):</strong> Usually commences around 3:30 PM to 4:00 PM depending on the specific Teer location (Shillong, Khanapara, or Juwai). This round typically sees the highest volume of participation.</li>
+                    <li><strong>Second Round (SR):</strong> Occurs roughly 45 minutes to an hour after the first. The number of arrows shot is usually fewer in the second round, slightly altering the probability dynamics for those who calculate common numbers.</li>
+                </ul>
+
+                <h2>The Mathematics of Belief: Common Numbers and Dreams</h2>
+                <p>Perhaps the most fascinating aspect of Teer is the methodology participants use to predict results. It is rarely a random guess. Participants rely on two main pillars:</p>
+                
+                <ol>
+                    <li><strong>Mathematical Calculation:</strong> Many followers maintain detailed ledgers of previous results (like the tables provided on Teer Daily). They look for patterns, "House" repetitions, and "Ending" sequences. For example, if a '5' ending has not appeared in 10 days, statisticians might predict a high probability of a '5' ending today.</li>
+                    <li><strong>Dream Interpretation:</strong> This is a unique cultural element. In local belief, dreams translate into numbers. Dreaming of a man might correspond to the number 6; dreaming of water might correspond to 7. There are codified "Dream Number" charts sold across the state that translate subconscious visuals into numerical predictions.</li>
+                </ol>
+
+                <h2>Legal Framework and Transparency</h2>
+                <p>Is Teer legal? Yes. Unlike many forms of gambling which are banned across India, Teer is legal and regulated within the state of Meghalaya under the <strong>Meghalaya Amusements and Betting Tax Act</strong>. The state government realized decades ago that banning a cultural practice drives it underground. By regulating it, they ensure:</p>
+                <ul>
+                    <li><strong>Revenue Generation:</strong> The state earns tax revenue which is used for infrastructure.</li>
+                    <li><strong>Fair Play:</strong> The counting of arrows is done publicly to prevent fixing.</li>
+                    <li><strong>Employment:</strong> The system employs thousands of ticket counters, archers, and administrative staff.</li>
+                </ul>
+
+                <h2>The Role of Digital Portals like Teer Daily</h2>
+                <p>Historically, results were communicated via blackboards at the archery ground or via phone calls to remote villages. In the modern era, the internet has bridged the gap. Websites like Teer Daily serve a critical function: Speed and Accuracy.</p>
+                <p>When the result is declared on the ground, information travels instantly via digital channels. However, with the rise of the internet comes the rise of misinformation. It is vital for participants to rely on trusted portals that verify the count directly from the source rather than relying on rumors on social media.</p>
+
+                <h2>Responsible Participation</h2>
+                <p>While Teer is legal and culturally significant, it involves financial risk. <strong>Teer Daily</strong> advocates strictly for responsible participation. It is crucial to treat this as an amusement or a support system for the archery clubs, rather than a primary income source. Participants should never wager money they cannot afford to lose. The beauty of Teer lies in its support for the sport of archery, not in addiction.</p>
+
+                <h3>Frequently Asked Questions</h3>
+                
+                <div class="faq-block">
+                    <span class="faq-q">Q1: Can I play Teer from outside Meghalaya?</span>
+                    <p>Technically, the sale of Teer tickets is restricted to licensed counters within Meghalaya. Online participation is a grey area and generally not officially sanctioned by the state government, though results are viewed globally.</p>
+                </div>
+
+                <div class="faq-block">
+                    <span class="faq-q">Q2: How are 'Common Numbers' generated?</span>
+                    <p>Common numbers are not official predictions. They are calculated by independent analysts based on mathematical formulas, previous result graphs, and probability theories regarding 'House' and 'Ending' numbers.</p>
+                </div>
+
+                <div class="faq-block">
+                    <span class="faq-q">Q3: Why are results sometimes delayed?</span>
+                    <p>Delays can happen due to adverse weather conditions (heavy rain affects archery accuracy), administrative delays at the polo grounds, or disputes regarding the arrow count which necessitate a recount for transparency.</p>
+                </div>
+
+                <div class="faq-block">
+                    <span class="faq-q">Q4: What is a 'House' and 'Ending'?</span>
+                    <p>'House' refers to the first digit of the result (e.g., in 82, the House is 8). 'Ending' refers to the last digit (e.g., in 82, the Ending is 2). Participants can bet on just the House or just the Ending for lower odds but higher probability.</p>
+                </div>
+
+                <div class="faq-block">
+                    <span class="faq-q">Q5: Are Teer results rigged?</span>
+                    <p>The physical nature of the game makes it very difficult to rig. With 50 archers shooting simultaneously and a public crowd watching the count, the randomness and physical skill factor ensure a high degree of integrity compared to software-based lotteries.</p>
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>Teer remains a fascinating anomaly in the modern world—a sport-based lottery that has survived and thrived by adapting to the times. From the mist-covered hills of Shillong to the screens of smartphones in Guwahati, the daily flight of arrows connects a community. Whether you are a participant, a math enthusiast tracking patterns, or a cultural observer, understanding Teer offers a window into the soul of Meghalaya.</p>
+                
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+                
+                <p><em><strong>Disclaimer:</strong> Teer Daily is an informational portal only. We are not affiliated with the Khasi Hills Archery Sports Institute or the Government of Meghalaya. We do not sell tickets or encourage gambling. Please comply with the laws of your jurisdiction.</em></p>
+            </div>
+        </article>
+        <!-- LONG FORM ARTICLE END -->
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Teer Daily</h4>
+                    <p style="color: #999; font-size: 14px;">The most trusted source for rapid Teer results. We bridge the gap between the archery grounds and the digital world with precision and speed.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Khanapara Result</a></li>
+                        <li><a href="#">Shillong Result</a></li>
+                        <li><a href="#">Juwai Result</a></li>
+                        <li><a href="#">Common Numbers</a></li>
+                        <li><a href="#">Dream Numbers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal & Support</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Teer Daily. All Rights Reserved. This site is for informational purposes only.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set Date
+        const dateElement = document.getElementById('currentDate');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = new Date().toLocaleDateString('en-US', options);
+
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            if(navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px';
+                navMenu.style.left = '0';
+                navMenu.style.width = '100%';
+                navMenu.style.background = 'white';
+                navMenu.style.padding = '20px';
+                navMenu.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Simple Status Badge Logic (Mockup)
+        const hour = new Date().getHours();
+        const statusDot = document.querySelector('.status-dot');
+        if(hour >= 16) {
+            statusDot.style.backgroundColor = '#28a745'; // Green if after 4 PM
+            statusDot.style.boxShadow = '0 0 10px #28a745';
+        }
+    </script>
+</body>
+</html>
